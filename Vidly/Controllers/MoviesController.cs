@@ -51,12 +51,43 @@ namespace Vidly.Controllers
             return View("MoviesForm", viewModel);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var movie = this._context.Movies.SingleOrDefault(m => m.Id == id);
+
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new MovieFormViewModel()
+            {
+                Movie = movie,
+                Genres = this._context.Genres.ToList()
+            };
+
+            return View("MoviesForm", viewModel);
+        }
+
         [HttpPost]
         public ActionResult Save(Movie movie)
         {
-            movie.DateAdded = DateTime.Now;
-            this._context.Movies.Add(movie);
+            if (movie.Id == 0)
+            {
+                movie.DateAdded = DateTime.Now;
+                this._context.Movies.Add(movie);
+            }
+            else
+            {
+                var movieInDb = this._context.Movies.Single(m => m.Id == movie.Id);
+                movieInDb.Name = movie.Name;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+                movieInDb.GenreId = movie.GenreId;
+                movieInDb.NumberInStock = movie.NumberInStock;
+            }
+
             this._context.SaveChanges();
+
             return RedirectToAction("Index", "Movies");
         }
     }
