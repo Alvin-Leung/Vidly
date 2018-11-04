@@ -28,6 +28,10 @@
     border: 2px solid red;
 }
 
+.create-new-object-button {
+    margin-bottom: 1.0rem;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
