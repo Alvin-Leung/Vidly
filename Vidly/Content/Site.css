@@ -16,6 +16,10 @@
     white-space: normal;
 }
 
+.page-title {
+    margin-top: 1.0rem;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
