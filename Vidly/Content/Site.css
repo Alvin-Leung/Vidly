@@ -28,6 +28,10 @@
     border: 2px solid red;
 }
 
+.validation-summary-errors {
+    color: red;
+}
+
 .create-new-object-button {
     margin-bottom: 1.0rem;
 }
