@@ -10,5 +10,15 @@ namespace Vidly.ViewModels
     {
         public IEnumerable<MembershipType> MembershipTypes { get; set; }
         public Customer Customer { get; set; }
+        public string PageTitle
+        {
+            get
+            {
+                if (this.Customer.Id == 0)
+                    return "New";
+                else
+                    return "Edit";
+            }
+        }
     }
 }
