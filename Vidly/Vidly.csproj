@@ -264,6 +264,10 @@
     <Compile Include="Migrations\201811020515094_AddNumberInStockToMovie.Designer.cs">
       <DependentUpon>201811020515094_AddNumberInStockToMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811050037339_MakeMovieNameRequired.cs" />
+    <Compile Include="Migrations\201811050037339_MakeMovieNameRequired.Designer.cs">
+      <DependentUpon>201811050037339_MakeMovieNameRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -273,6 +277,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\NumberInStockBetween1And20.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
@@ -442,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811020515094_AddNumberInStockToMovie.resx">
       <DependentUpon>201811020515094_AddNumberInStockToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811050037339_MakeMovieNameRequired.resx">
+      <DependentUpon>201811050037339_MakeMovieNameRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
