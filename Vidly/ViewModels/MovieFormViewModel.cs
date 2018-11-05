@@ -10,5 +10,16 @@ namespace Vidly.ViewModels
     {
         public IEnumerable<Genre> Genres { get; set; }
         public Movie Movie { get; set; }
+
+        public string PageTitle
+        {
+            get
+            {
+                if (this.Movie.Id == 0)
+                    return "New";
+                else
+                    return "Edit";
+            }
+        }
     }
 }

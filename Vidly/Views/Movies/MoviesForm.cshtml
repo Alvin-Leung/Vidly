@@ -1,17 +1,10 @@
 ﻿@model Vidly.ViewModels.MovieFormViewModel
 @{
-    ViewBag.Title = "MoviesForm";
+    ViewBag.Title = Model.PageTitle;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if (Model.Movie.Id == 0)
-{
-    <h1 class="page-title">New Movie</h1>
-}
-else
-{
-    <h1 class="page-title">Edit Movie</h1>
-}
+<h1 class="page-title">@Model.PageTitle Movie</h1>
 
 @using (Html.BeginForm("Save", "Movies"))
 {
