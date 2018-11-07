@@ -58,7 +58,7 @@ namespace Vidly.Controllers.Api
         }
 
         [HttpPut]
-        public void UpdateMovie(int id, MovieDto movieDto)
+        public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -69,12 +69,13 @@ namespace Vidly.Controllers.Api
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
             Mapper.Map(movieDto, movieInDb);
-
             this._context.SaveChanges();
+
+            return Ok();
         }
 
         [HttpDelete]
-        public void DeleteMovie(int id)
+        public IHttpActionResult DeleteMovie(int id)
         {
             var movieInDb = this._context.Movies.SingleOrDefault(m => m.Id == id);
 
@@ -83,6 +84,8 @@ namespace Vidly.Controllers.Api
 
             this._context.Movies.Remove(movieInDb);
             this._context.SaveChanges();
+
+            return Ok();
         }
     }
 }
