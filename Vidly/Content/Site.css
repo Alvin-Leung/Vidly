@@ -3,6 +3,10 @@
     padding-bottom: 20px;
 }
 
+h2 {
+    margin-top: 1.0rem;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -14,10 +18,6 @@
 */
 .dl-horizontal dt {
     white-space: normal;
-}
-
-.page-title {
-    margin-top: 1.0rem;
 }
 
 .field-validation-error {

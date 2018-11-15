@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="page-title">Customers</h1>
+<h2>@ViewBag.Title</h2>
 
 @Html.ActionLink("New Customer", "New", "Customers", null, new { @class = "btn btn-success create-new-object-button", role = "button" })
 
