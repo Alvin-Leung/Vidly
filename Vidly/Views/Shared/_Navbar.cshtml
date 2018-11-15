@@ -5,7 +5,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="nav">
+            <ul class="nav navbar-nav mr-auto">
                 <li class="nav-item">
                     @Html.ActionLink("Customers", "Index", "Customers", new { area = "" }, new { @class = "nav-link" })
                 </li>
@@ -13,6 +13,7 @@
                     @Html.ActionLink("Movies", "Index", "Movies", new { area = "" }, new { @class = "nav-link" })
                 </li>
             </ul>
+            @Html.Partial("_LoginPartial")
         </div>
     </nav>
 </div>
